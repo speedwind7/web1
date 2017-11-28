@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  	<title>图片自动滚动</title>
+  	<meta charset="utf-8" />
+  	<style type="text/css">
+  	#picScroll{
+  		white-space: nowrap;
+  		overflow:hidden;
+  		width:600px;
+
+  	}
+			/*offsetWidth   对象的可见宽度;*/
+	</style>
+  	<script type="text/javascript">		
+  	    
+  	   
+		function changeToLeft(){
+			document.getElementById("picScroll").scrollLeft++;
+			if(document.getElementById("picScroll").scrollLeft>document.getElementById("picScroll1").offsetWidth)
+		{
+			document.getElementById("picScroll").scrollLeft=0;
+		}
+		}	
+
+		
+			var run = setInterval("changeToLeft()",10);
+		function con(){
+			run=setInterval("changeToLeft()",10);
+		}
+        
+	</script>	
+		
+</head>
+
+<body>
+	<div id="picScroll" onmouseover="clearInterval(run)" onmouseout="con()">
+		<span id="picScroll1">
+			<img src="1.jpg" />
+			<img src="2.jpg" />
+			<img src="3.jpg" />
+			<img src="4.jpg" />
+			<img src="5.jpg" />
+			<img src="6.jpg" />
+			<img src="7.jpg" />
+			<img src="8.jpg" />
+		</span>
+		<span id="picScroll2" >
+			<img src="1.jpg" />
+			<img src="2.jpg" />
+			<img src="3.jpg" />
+			<img src="4.jpg" />
+			<img src="5.jpg" />
+			<img src="6.jpg" />
+			<img src="7.jpg" />
+			<img src="8.jpg" />
+		</span>
+ 	</div> 
+</body>
+</html>
