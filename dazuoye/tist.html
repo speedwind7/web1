@@ -2,6 +2,29 @@
 <html>
 <head>
 	<title>家庭教师</title>
+		<style>
+			body{margin:0; padding:0}
+			#to_top{
+			width:30px;
+			height:40px;
+			font:14px/20px arial;
+			text-align:center;
+			position:absolute;
+			cursor:pointer;
+		}
+</style>
+<script>
+window.onload = function(){
+ var oTop = document.getElementById("to_top");
+ document.onmousemove = function(evt){
+  var oEvent = evt || window.event;
+  var scrollleft = document.documentElement.scrollLeft || document.body.scrollLeft;
+  var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+  oTop.style.left = oEvent.clientX + scrollleft +10 +"px";
+  oTop.style.top = oEvent.clientY + scrolltop + 10 + "px";
+ }
+}
+</script><!-- 鼠标跟随 -->
 	<style type="text/css">
 	#ring{
 		width: 380px;
@@ -18,8 +41,21 @@
 		text-decoration: none;
 	}
 	</style>
+	<script language="javascript">
+var Arraycolor=new Array("olive","white","black");
+var n=0;
+function turncolors(){
+  if (n==(Arraycolor.length-1)) n=0;
+  n++;
+  document.bgColor = Arraycolor[n];
+}
+// 夜间模式
+</script>
 </head>
 <body bgcolor="#ffffff">
+ <p>
+ <input type="button" name="Submit" value="夜间模式" onclick="turncolors()">
+</p>
 <div>
 <div style="width: 1500px; height:285px"><img src="logo.jpg"><img src="head2.jpg"><img src="images/timg.jpg"></div>
 <div>
@@ -38,5 +74,8 @@
 <div id="ring" style="background-image: url(yu.jpg);"><h1>指环篇</h1></div>
 <div id="ring" style="background-image: url(wu.jpg);"><h1>未来篇</h1></div>
 </div>
+<!-- 鼠标跟随 -->
+<div id="to_top"><img src="timg.jpg"></div>
+
 </body>
 </html>
