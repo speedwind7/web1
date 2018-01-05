@@ -2,6 +2,29 @@
 <html>
 <head>
 	<title>剧情介绍</title>
+	<style>
+body{margin:0; padding:0}
+#to_top{
+width:30px;
+height:40px;
+font:14px/20px arial;
+text-align:center;
+position:absolute;
+cursor:pointer;
+}
+</style>
+<script>
+window.onload = function(){
+ var oTop = document.getElementById("to_top");
+ document.onmousemove = function(evt){
+  var oEvent = evt || window.event;
+  var scrollleft = document.documentElement.scrollLeft || document.body.scrollLeft;
+  var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+  oTop.style.left = oEvent.clientX + scrollleft +10 +"px";
+  oTop.style.top = oEvent.clientY + scrolltop + 10 + "px";
+ }
+}<!-- 鼠标跟随 -->
+</script>
 	<style type="text/css">
 	a{
 		text-decoration: none;
@@ -80,6 +103,7 @@
 <a href="tist.html"><h2>回到主页</h2></a>
 </div>
 </div>
-
+<!-- 鼠标跟随 -->
+<div id="to_top"><img src="timg.jpg"></div>
 </body>
 </html>
